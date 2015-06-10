@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="wrap">
+		<div class="profile-box">
+			<div class="img">
+				<%= image_tag @user.avatar, width: "100%", height: "100%" %>
+			</div>
+			<div class="user-name pull-left"><a href=""><b><%= name(@user) %></b>, <%= age(@user) %></a></div>
+			<div class="user-location text-right"><i class="fa fa-map-marker"></i> <%= location(@user) %></div>
+			<div class="description">
+				<h4 class="text-uppercase"><small>Description</small></h4>
+				<p class="small"><%= @user.bio %></p>
+			</div>
+		</div>
+	</div>
+</div>

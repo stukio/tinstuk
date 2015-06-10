@@ -1,0 +1,39 @@
+<div class="bg-dark"></div>
+
+<div class="home-information">
+	<h1 class="slogan">Any swipe can change your life</h1>	
+	<%= link_to "auth/facebook", class: "btn btn-social btn-lg btn-facebook" do %>
+		<i class="fa fa-facebook"></i> Sign in with Facebook
+	<% end %>
+	<br /><br />				
+</div>
+
+
+
+
+<script type="text/javascript">
+	
+jQuery(function($) {
+
+	$.supersized({
+		slide_interval   :   4000,
+		transition       :   1,
+		transition_speed : 700,
+		slinde_links     : 'blank',
+
+		slides           : [
+
+			{image : 'assets/bg.jpg'},
+			{image : 'assets/bg2.jpg'},
+			{image : 'assets/bg3.jpg'}
+
+		]
+
+	});
+
+
+});
+
+</script>
+
+

@@ -1,0 +1,26 @@
+<div class="container">
+	
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Name</th>
+				<th>Matched on</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<%= render partial: "match", collection: @matches %>
+		</tbody>
+	</table>
+
+
+</div>
+
+
+<script type="text/javascript">
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+</script>
+

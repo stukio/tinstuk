@@ -1,0 +1,113 @@
+// THIS CSS SNINEPP TURNS YOUR WEBPAGES PRINTABLE
+
+@media print {
+	* {
+		background: none !important;
+		color: black !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+
+		/* Images, vectors and such */
+		filter: Gray(); 						 /* IE4-8: depreciated */
+		filter: url('desaturate.svg#grayscale'); /* SVG version for IE10, Firefox, Safari 5 and Opera */
+		-webkit-filter: grayscale(100%); 		 /* Chrome + Safari 6 */
+		-moz-filter: grayscale(100%); 			 /* Future proof */
+		-ms-filter: grayscale(100%); 			 /* Future proof */
+		-o-filter: grayscale(100%); 			 /* Future proof */
+		filter: grayscale(100%); 				 /* Future proof or polyfilled */
+	}
+
+	a {
+		text-decoration: underline;
+	}
+
+	a[href]:after {
+		content: " (" attr(href) ")"; 
+	}
+
+	a[href="#"],
+	a[href="javascript:"] {
+		content: "";
+	}
+}
+
+// END PRINT
+
+
+
+// TABS OUTLINE
+
+.tabs dd > a, .tabs .tab-title > a{
+    outline: none;
+}
+
+
+
+// BODY STYLES + FONT STYLES
+
+body,html{
+	height:100%;
+	width:100%;
+	text-rendering: optimizelegibility;
+
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+
+	-moz-tap-highlight-color:rgba(0,0,0,0); 
+	-moz-text-size-adjust: none;
+	-moz-font-smoothing: antialiased;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	-ms-tap-highlight-color:rgba(0,0,0,0); 
+	-ms-text-size-adjust: none;
+	-ms-font-smoothing: antialiased;
+
+
+	font-feature-settings: 'lnum';
+	/* vendor-prefixes */
+	-moz-font-feature-settings: 'lnum=1';
+	-ms-font-feature-settings: 'lnum';
+	-webkit-font-feature-settings: 'lnum';
+	-o-font-feature-settings: 'lnum';
+}
+
+// END BODY STYLES + END FONT STYLES
+
+
+
+// GENERAL LINKS
+
+a {
+	transition: all 0.3s ease-out;
+	color: $brand-primary;
+}
+
+// END GENERAL LINKS
+
+
+// TEXT TOOLS
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+
+
+
+// Colors
+
+.white {
+	color: white;
+}
+
+a.white {
+	color: white !important;
+}
+

@@ -1,0 +1,59 @@
+<%= simple_form_for(@user, url: url_for(:action => 'update', :controller => 'users'), html: {multipart: true} ) do |f| %>
+
+<div class="container">
+	<h4 class="text-uppercase"><small>Interested in</small></h4>
+	<div class="dropdown">
+		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expended="true">
+			<%= current_user.interest.capitalize %>
+			<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+			<li role="presentation" class="dropdown-header"> Interested in</li>
+			<li role="presentation" class="gender"><a role="menuitem" tabindex="-1" href="#">Female</a></li>
+			<li role="presentation" class="gender"><a role="menuitem" tabindex="-1" href="#">Male</a></li>
+			<li role="presentation" class="gender"><a role="menuitem" tabindex="-1" href="#">Both</a></li>
+		</ul>
+	</div>
+	<%= f.input :interest, as: :hidden, label: false %>
+
+	<h4 class="text-uppercase"><small>Profile Description</small></h4>
+	<%= f.input :bio, as: :text, class: "form-control", label: false, :input_html => { :rows => 5, class: 'form-control' } %>
+	
+	<h4 class="text-uppercase"><small>City</small></h4>
+	<%= f.input :location, label: false, :input_html => { class: 'form-control' } %>
+	
+	<h4 class="text-uppercase"><small>Age</small></h4>
+	<%= f.input :date_of_birth, as: :string, label: false, :input_html => { class: 'form-control' } %>
+
+	<br />
+
+        <div class="text-center">
+          <div class="fileinput fileinput-new" data-provides="fileinput">
+              <div class="fileinput-new thumbnail" style="width: 100px; height: 75px;">
+                <img data-src="holder.js/100%x100%" src="<%= current_user.avatar %>">
+              </div>
+              <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 100px; max-height: 75px;"></div>
+              <div>
+                <span class="btn btn-default btn-file"><span class="fileinput-new">Select image</span><span class="fileinput-exists">Change</span><%= f.file_field :avatar %></span>
+                <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+              </div>
+            </div>
+        </div>
+
+        <%= f.button :submit, class: "btn btn-primary btn-block btn-xs", value: "Submit" %>
+        <br />
+        <%= link_to 'Cancel your account', user_path(current_user.id), method: :delete, data: { confirm: "Are you sure?"}, title: "Delete Account" %>
+</div>
+
+<% end %>
+
+<script type="text/javascript">
+	$('.gender').click(function(){
+		$("#dropdownMenu1").text( $(this).text() );
+		$("#dropdownMenu1").append('<span class="caret"></span>');
+		$("#user_interest").val( $(this).text() );
+	});
+</script>
+
+
+
